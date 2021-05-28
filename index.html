@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+       
+
+        <h1> This is array push and sort</h1>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <title>Push,Split</title>
+        <link href="style.css" rel="stylesheet" />
+
+        <style> 
+            #myDIV {
+              border: 2px solid black;
+              width: 300px;
+              height: 300px;
+            }
+        </style>
+        
+        <script>
+
+            var arr1 = ["abc", "cde"];
+
+            var arr2 = [];
+
+
+
+            function fun1(){
+
+                var value = document.getElementById("op").value;
+
+                console.log(value);
+
+                console.log(arr1);
+
+                console.log(arr2);
+
+                // var x = 3;
+
+                // var y = "ty";
+
+                // console.log(typeof x)
+
+                // console.log(typeof y)
+
+                arr1.push(value);
+
+                document.getElementById("dis").innerHTML = arr1;
+
+
+
+                console.log(arr1);
+
+                arr2 = arr1.sort();
+
+                console.log(arr2);
+
+                document.getElementById("dis1").innerHTML = arr2;
+
+              
+
+            }
+
+        </script>
+
+
+
+    </head>
+
+    <body>
+
+        <p>Enter number to push: </p><input  id="op">
+
+        <button onclick="fun1()">Submit</button>
+
+        <p>Array before sorting: </p>
+
+        <p id="dis"></p>
+
+        <p>Array after sorting: </p>
+
+        <p id="dis1"></p>
+
+        <button id="Submit()">Try it</button>
+
+        <p id="demo"></p>
+
+        <script>
+            var x = document.getElementById("Submit()");
+            x.addEventListener("mouseover", myFunction);
+            x.addEventListener("click", mySecondFunction);
+            x.addEventListener("mouseout", myThirdFunction);
+
+            function myFunction() {
+                document.getElementById("demo").innerHTML += "Moused over!<br>"
+            }
+
+            function mySecondFunction() {
+                document.getElementById("demo").innerHTML += "Clicked!<br>"
+            }
+
+            function myThirdFunction() {
+                document.getElementById("demo").innerHTML += "Moused out!<br>"
+}
+</script>
+
+
+    </body>
+
+</html>
