@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<body>
+    
+    <h1>JavaScript String Methods</h2>
+    <p> This is thh sentence which is used for the various string functions:</p>
+
+    <h5>JavaScript is the world's most popular programming language. JavaScript is the programming language of the Web. JavaScript is easy to learn. This tutorial will teach you JavaScript string methods </h5>
+
+
+    <!--<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="C:\Users\Aman kumar\Downloads\smiley.gif" alt="Smiley" width="32" height="32">-->
+
+    <p>1.Convert string to Upper case:</p>
+    <button onclick="myFunction()">Click here</button>
+    <p id="demo1">JavaScript is the world's most popular programming language. JavaScript is the programming language of the Web. JavaScript is easy to learn. This tutorial will teach you JavaScript string methods </p>
+
+    <script>
+   
+        function myFunction() {
+            var text = document.getElementById("demo1").innerHTML;
+            document.getElementById("demo1").innerHTML = text.toUpperCase();
+        }
+        function bigImg(x) {
+            x.style.height = "64px";
+            x.style.width = "64px";
+        }
+
+        function normalImg(x) {
+            x.style.height = "32px";
+            x.style.width = "32px";
+        }
+
+    function mouseOverImage() {
+            document.getElementById("ImageButton1").src = "C:\Users\Aman kumar\Downloads\paris1.jpg";
+        }
+
+        function mouseOutImage() {
+            document.getElementById("ImageButton1").src = "C:\Users\Aman kumar\Downloads\paris2.jpg";
+        }
+</script>
+
+<p>2.The concat() method joins two or more strings:</p>
+
+<p id="demo"></p>
+<button click=""
+<script>
+    let text1 = "JavaScript is the world's most popular programming language. JavaScript is the programming language of the Web. JavaScript is easy to learn.";
+    let text2 = "This tutorial will teach you JavaScript string methods!";
+    let text3 = text1.concat(" ",text2);
+    document.getElementById("demo").innerHTML = text3;
+    </script>
+
+<p>3.The length property returns the length of a string:</p>
+
+<p id="demo2"></p>
+<script>
+let txt = "JavaScript is the world's most popular programming language.";
+let sln = txt.length;
+document.getElementById("demo2").innerHTML = sln;
+</script>
+
+<p>The search() method returns the position of the first occurrence of a specified text in a string:</p>
+<p id="demo3"></p>
+<script>
+var str = "JavaScript is the world's most 'popular' programming language.";
+var pos = str.search("popular");
+document.getElementById("demo3").innerHTML = pos;
+</script>
+</body>
+</html>
