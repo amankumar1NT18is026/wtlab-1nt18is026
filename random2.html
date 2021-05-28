@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Random Generator</title>
+        <style>
+            .container .btn{
+                background-color: white;
+                color:black;
+                width:80px;
+                height:30px;
+            }
+            .container .btn:hover{
+                background-color: green;
+                color:white;
+            }
+            .sizefix{
+                width:400px;
+                height:500px;
+            }
+           .sizefix p{
+               word-break: break-all;
+                padding:10px;
+                visibility: hidden;
+                background: rgba(200, 226,85,0.333);
+                word-break: keep-all;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <label for="name">Enter your name:</label><br>
+        <input type="text" style="box-sizing: content-box;width:250px;height:20px;" name="name" placeholder="name" id="name">
+        <br><br>
+         <button class="btn">Click Here</button></body>
+        </div>
+        <div class="sizefix"><p class="story"></p></div>
+     
+            <script src="para.js"></script>
+        
+    </body>
+</html>
