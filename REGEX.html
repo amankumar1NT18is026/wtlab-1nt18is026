@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <center><h1 style:"color: purple;">REGULAR EXPRESSIONS</h2>
+
+    <h2 style="color:rgb(218, 32, 88);">AMAN KUMAR</h2>
+
+    <p style="color:indigo;">1NT18IS026</p>
+    <p style="color:indigo;">6th sem ISE 'A' Sec</p></center>
+
+<br>
+    <center>
+    <style>
+        .head{
+            font-size:25px;
+           
+            color:black;
+        }
+        .btn1{
+            background-color: cornflowerblue;
+            color:white;
+            width:120px;
+            height:40px;
+            font-size:18px;
+        }
+        div{
+            margin-top:30px;
+            background-color: pink; 
+        }
+        p{
+            font-size:20px;
+            color:black;
+        }
+    </style>
+    <script>
+
+   function func1(){
+       var colors=['goal', 'new', 'user', 'sit', 'eat', 'dinner'];
+       var c=document.getElementById("char").value;
+       var pattern=new RegExp(c);
+    const filteredarr=colors.filter(item=>!pattern.test(item))
+     document.getElementById("p1").innerHTML="Array Elements are : "+colors+"<br>"+"After Filtering : "+filteredarr;
+   }
+   function func2(){
+    var colors=['goal', 'new', 'user', 'sit', 'eat', 'dinner'];
+       var pattern1=new RegExp(/^([a-z]*)e([a-z]*)n([a-z]*)$/);
+       var pattern2=new RegExp(/^([a-z]*)n([a-z]*)e([a-z]*)$/);
+       var final=new RegExp(pattern1.source+ "|" + pattern2.source);
+    const filteredarr=colors.filter(item=>final.test(item))
+     document.getElementById("p2").innerHTML="Array Elements are : "+colors+"<br>"+"After Filtering : "+filteredarr;
+   }
+   function func3(){
+       var colors=['lovely','1\ndentist','2 lonely','eden','fly\n','dent'];
+       var pattern1=new RegExp(/^den\w*$/);
+       var pattern2=new RegExp(/^\w*ly$/);
+       var final=new RegExp(pattern1.source+ "|" + pattern2.source);
+    const filteredarr=colors.filter(item=>final.test(item))
+     document.getElementById("p3").innerHTML="Array Elements are : "+ colors + "<br>" + "After Filtering : "+ filteredarr ;
+   }
+   function func4(){
+    var pattern=/^hand/g; 
+    var check=/^hand\w+$/;                                                                                       ;
+    pattern.compile(pattern);
+       var arr2=['handed','hand','handy','unhanded','handle','hand-2'];
+    const newarr2=arr2.map(item=>{
+        if(check.test(item))
+        return item.replace(pattern,"X")
+        else return item})
+       document.getElementById("p4").innerHTML="Array Elements are : "+ arr2 + "<br>" + "After replacing : "+ newarr2 ;
+    }
+   function func5(){
+       var str= "refused reed redo received";
+       var p=/removed|reed|refused|received/gi;
+       p.compile(p);
+      var newstr=str.replace(p,"X");
+       document.getElementById("p5").innerHTML="String is : "+ str+ "<br>" + "After replacing : " + newstr ;
+
+   }
+   function func6(){
+    var str= "th\\er\\e ar\\e common asp\\ects among th\\e alt\\ernations";
+       var p=/\\e/gi;
+       p.compile(p);
+      var newstr=str.replace(p,"e");
+       document.getElementById("p6").innerHTML="String is : "+ str + "<br>" + "After replacing : " + newstr ; 
+   }
+    </script>
+</head>
+<body>
+    <body style="background-color: paleturquoise"></body>
+    <div class="class1">
+        <h class="head">Enter the character which does not contain in given array of elements </h>
+        <input type="text" name="text" id="char">
+        <p id="p1"></p>
+        <button class="btn1" onclick="func1();">Click</button>
+    </div>
+    <div class="class2">
+        <h class="head">Displays Array elements containg both e and n characters: </h>
+        <p id="p2"></p>
+        <button class="btn1" onclick="func2();">Click</button>
+    </div>
+    <div class="class3">
+        <h class="head">Displays Array elements that either start with den or ends with ly: </h>
+        <p id="p3"></p>
+        <button class="btn1" onclick="func3();">Click</button>
+    </div>
+    <div class="class4">
+        <h class="head">Displays Array elements by replacing hand from elements with x if that element <br> start with hand followed by atleast one word character: </h>
+        <p id="p4"></p>
+        <button class="btn1" onclick="func4();">Click</button>
+    </div>
+    <div class="class5">
+        <h class="head">Replace removed,reed,received,refused with X: </h>
+        <p id="p5"></p>
+        <button class="btn1" onclick="func5();">Click</button>
+    </div>
+    <div class="class6">
+        <h class="head">Replacing \e with e to a given string: </h>
+        <p id="p6"></p>
+        <button class="btn1" onclick="func6();">Click</button>
+    </div>
+</center>
+</body>
+</html>
