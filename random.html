@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            p{
+                font-size:large;
+                font-family: 'Courier New', Courier, monospace;
+            }
+        </style>
+        <title>Guessing Number</title>
+        <script type="text/javascript">
+          var a=Math.floor((Math.random()*100)+1);
+          var max=9;
+           var min=0;
+            function func(){
+           // var a=50;
+          var t;
+           if(min==max){
+               document.write("No more chances\t"+"Expected answer was\t"+a);
+           }
+          var num=document.getElementById('num').value;
+            if(num>a){
+                alert("larger than expected number");
+                min++;
+              }
+              else if(num<a){
+               alert("smaller than expected number");
+                min++;
+             }
+             else{
+                 var name=prompt("enter your name","abcd");
+                 if(name==null || name==""){
+                  t="Hey XXXX you guessed correctly" ;  
+                 }
+                 else{
+                     t="Hey"+name+"! you guessed correctly";
+                 }
+                 document.write(t+"\n");
+                 document.write("Expected answer is\t"+ a);
+             }
+            }
+        </script>
+    </head>
+    <body>
+        <p class="chan">Number Range between 10-100</p>
+    <p>Enter the number:</p>
+        <form>
+        <input type="number" id="num" style="height:30px;" name="num" placeholder="enter the guessed number"></br></br>
+        <input type="button" onclick="func()" value="Click">
+    </form>
+    </body>
+</html>
